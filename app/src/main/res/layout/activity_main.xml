@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <View android:layout_width="300dp" android:layout_height="300dp"
+        android:background="@drawable/glow_gradient"
+        android:translationX="-80dp" android:translationY="-100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View android:layout_width="250dp" android:layout_height="250dp"
+        android:background="@drawable/glow_gradient2"
+        android:translationX="100dp" android:translationY="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="APK 反编译助手"
+        android:textColor="@color/text_primary"
+        android:textSize="28sp" android:textStyle="bold"
+        android:letterSpacing="0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="云端反编译 · 一键获取源码"
+        android:textColor="@color/text_secondary" android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.cardview.widget.CardView android:id="@+id/cardUpload"
+        android:layout_width="0dp" android:layout_height="200dp"
+        android:layout_marginHorizontal="32dp" android:layout_marginTop="60dp"
+        app:cardBackgroundColor="@color/bg_card"
+        app:cardCornerRadius="24dp" app:cardElevation="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center" android:orientation="vertical">
+            <ImageView android:layout_width="56dp" android:layout_height="56dp"
+                android:src="@android:drawable/ic_menu_upload"
+                app:tint="@color/accent" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" android:text="点击选择 APK"
+                android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:text="支持任意 Android 应用"
+                android:textColor="@color/text_secondary" android:textSize="13sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView android:id="@+id/tvStatus"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="24dp" android:text="准备就绪"
+        android:textColor="@color/text_secondary" android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardUpload" />
+
+    <ProgressBar android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp" android:layout_height="6dp"
+        android:layout_marginHorizontal="48dp" android:layout_marginTop="16dp"
+        android:max="100" android:progress="0"
+        android:progressTint="@color/accent" android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+</androidx.constraintlayout.widget.ConstraintLayout>
