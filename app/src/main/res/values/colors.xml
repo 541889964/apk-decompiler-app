@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="bg_dark">#0F0F1A</color>
+    <color name="bg_dark">#0A0A14</color>
     <color name="bg_card">#1A1A2E</color>
+    <color name="bg_card_light">#252540</color>
     <color name="accent">#6C63FF</color>
     <color name="accent2">#FF6584</color>
     <color name="text_primary">#FFFFFF</color>
-    <color name="text_secondary">#B0B0C3</color>
+    <color name="text_secondary">#9A9AB0</color>
+    <color name="divider">#2A2A45</color>
 </resources>

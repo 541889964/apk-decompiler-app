@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.ApkDecompiler" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.ApkDecompiler" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">#6C63FF</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#FF6584</item>
+        <item name="colorPrimaryDark">#0A0A14</item>
+        <item name="colorAccent">#FF6584</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 </resources>

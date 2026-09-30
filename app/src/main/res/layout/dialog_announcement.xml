@@ -1,29 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="24dp">
-    <androidx.cardview.widget.CardView android:id="@+id/cardAnnouncement"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        app:cardBackgroundColor="#1A1A2E" app:cardCornerRadius="24dp" app:cardElevation="16dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-            android:orientation="vertical" android:padding="24dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="📢 使用公告" android:textColor="#FFFFFF"
-                android:textSize="20sp" android:textStyle="bold" />
-            <View android:layout_width="40dp" android:layout_height="3dp"
-                android:layout_marginTop="12dp" android:background="#6C63FF" />
-            <ScrollView android:layout_width="match_parent" android:layout_height="360dp"
-                android:layout_marginTop="16dp">
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:lineSpacingExtra="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAnnouncement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#1A1A2E"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- 顶部图标 -->
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/circle_accent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="📢"
+                    android:textSize="28sp" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="使用公告"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="6dp"
+                android:text="请仔细阅读以下内容"
+                android:textColor="#9A9AB0"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#2A2A45" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7dp"
                     android:text="@string/announcement_text"
-                    android:textColor="#B0B0C3" android:textSize="14sp" />
+                    android:textColor="#C5C5D5"
+                    android:textSize="13.5sp" />
             </ScrollView>
-            <com.google.android.material.button.MaterialButton android:id="@+id/btnAgree"
-                android:layout_width="match_parent" android:layout_height="52dp"
-                android:layout_marginTop="20dp" android:text="我已知晓"
-                android:textColor="#FFFFFF" android:textSize="16sp"
-                app:backgroundTint="#6C63FF" app:cornerRadius="16dp" />
+
+            <Button
+                android:id="@+id/btnAgree"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_primary"
+                android:text="我已知晓"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:stateListAnimator="@null" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

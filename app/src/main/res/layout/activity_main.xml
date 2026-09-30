@@ -6,76 +6,190 @@
     android:layout_height="match_parent"
     android:background="@color/bg_dark">
 
-    <View android:layout_width="300dp" android:layout_height="300dp"
-        android:background="@drawable/glow_gradient"
-        android:translationX="-80dp" android:translationY="-100dp"
+    <!-- 左上紫色光晕 -->
+    <View
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:background="@drawable/glow_purple"
+        android:translationX="-100dp"
+        android:translationY="-120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View android:layout_width="250dp" android:layout_height="250dp"
-        android:background="@drawable/glow_gradient2"
-        android:translationX="100dp" android:translationY="100dp"
+    <!-- 右下粉色光晕 -->
+    <View
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:background="@drawable/glow_pink"
+        android:translationX="100dp"
+        android:translationY="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView android:id="@+id/tvTitle"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="APK 反编译助手"
-        android:textColor="@color/text_primary"
-        android:textSize="28sp" android:textStyle="bold"
-        android:letterSpacing="0.05"
+    <!-- 顶部小标签 -->
+    <TextView
+        android:id="@+id/tvBadge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn_primary"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:text="v1.0 · 云端版"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:letterSpacing="0.1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView android:id="@+id/tvSubtitle"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <!-- 主标题 -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="APK 反编译助手"
+        android:textColor="@color/text_primary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBadge" />
+
+    <!-- 副标题 -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="云端反编译 · 一键获取源码"
-        android:textColor="@color/text_secondary" android:textSize="14sp"
+        android:text="上传 APK · 一键获取源码"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:letterSpacing="0.05"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
-    <androidx.cardview.widget.CardView android:id="@+id/cardUpload"
-        android:layout_width="0dp" android:layout_height="200dp"
-        android:layout_marginHorizontal="32dp" android:layout_marginTop="60dp"
+    <!-- 上传卡片 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardUpload"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="48dp"
         app:cardBackgroundColor="@color/bg_card"
-        app:cardCornerRadius="24dp" app:cardElevation="12dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-            android:gravity="center" android:orientation="vertical">
-            <ImageView android:layout_width="56dp" android:layout_height="56dp"
-                android:src="@android:drawable/ic_menu_upload"
-                app:tint="@color/accent" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="16dp" android:text="点击选择 APK"
-                android:textColor="@color/text_primary" android:textSize="18sp" android:textStyle="bold" />
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="4dp" android:text="支持任意 Android 应用"
-                android:textColor="@color/text_secondary" android:textSize="13sp" />
-        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 卡片内光晕 -->
+            <View
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:background="@drawable/card_glow" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:background="@drawable/circle_accent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="⬆"
+                        android:textColor="#FFFFFF"
+                        android:textSize="36sp" />
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="点击选择 APK 文件"
+                    android:textColor="@color/text_primary"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="支持任意 Android 应用"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView android:id="@+id/tvStatus"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_marginTop="24dp" android:text="准备就绪"
-        android:textColor="@color/text_secondary" android:textSize="14sp"
+    <!-- 状态行 -->
+    <LinearLayout
+        android:id="@+id/statusRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardUpload" />
+        app:layout_constraintTop_toBottomOf="@id/cardUpload">
 
-    <ProgressBar android:id="@+id/progressBar"
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/circle_accent" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="准备就绪"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 进度条 -->
+    <ProgressBar
+        android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="0dp" android:layout_height="6dp"
-        android:layout_marginHorizontal="48dp" android:layout_marginTop="16dp"
-        android:max="100" android:progress="0"
-        android:progressTint="@color/accent" android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="6dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="16dp"
+        android:max="100"
+        android:progress="0"
+        android:progressTint="@color/accent"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvStatus" />
+        app:layout_constraintTop_toBottomOf="@id/statusRow" />
+
+    <!-- 底部版本号 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Powered by GitHub Actions"
+        android:textColor="@color/text_secondary"
+        android:textSize="10sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
